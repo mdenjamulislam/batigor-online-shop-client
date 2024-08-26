@@ -1,3 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    body {
+        @apply bg-white font-sans text-textColor;
+    }
+    p {
+        @apply text-sm text-textColor md:text-base;
+    }
+
+    .container {
+        @apply px-4 md:px-6 lg:px-8 xl:px-16 2xl:px-32;
+    }
+
+    .btn--filled {
+        @apply inline-flex items-center justify-center gap-1 rounded-lg border border-accent bg-accent px-4 py-2 text-center text-sm font-semibold text-white transition-all duration-300 ease-in-out hover:bg-accent2 md:px-6 lg:px-8 lg:py-3 lg:text-base;
+    }
+    .btn--outline {
+        @apply inline-flex items-center justify-center gap-1 rounded-lg border border-accent bg-white px-4 py-2 text-center text-sm font-semibold text-accent text-textColor transition-all duration-300 ease-in-out hover:bg-accent2 hover:text-white md:px-6 md:py-3 lg:px-8 lg:text-base;
+    }
+
+    .btn--small {
+        @apply inline-flex items-center justify-center gap-1 rounded-lg border border-accent bg-accent px-3 py-1 text-center text-sm text-white transition-all duration-300 ease-in-out hover:bg-accent2 md:px-4 md:py-2;
+    }
+
+    .box--shadow {
+        @apply shadow-xl;
+    }
+
+    .section--bg {
+        @apply bg-light;
+    }
+
+    .section--padding {
+        @apply py-3 md:py-4 lg:py-5 xl:py-6;
+    }
+    .sectionInner--padding {
+        @apply py-4 md:py-6 lg:py-7 xl:py-8;
+    }
+
+    .heading--one {
+        @apply text-2xl font-semibold text-primary md:text-3xl lg:text-4xl;
+    }
+    .heading--two {
+        @apply text-xl font-semibold text-primary md:text-2xl lg:text-3xl;
+    }
+    .heading--three {
+        @apply text-lg font-semibold text-primary md:text-xl lg:text-2xl;
+    }
+    .heading--four {
+        @apply text-lg font-semibold text-primary lg:text-xl;
+    }
+    .heading--five {
+        @apply text-base font-semibold text-primary lg:text-lg;
+    }
+    .heading--six {
+        @apply text-sm font-semibold text-primary md:text-base;
+    }
+
+    .field {
+        @apply w-full rounded-lg rounded-l-none border border-light p-3 py-2 text-xs text-textColor focus:border-accent focus:outline-none md:p-4 md:py-3 md:text-sm lg:text-base;
+    }
+
+    .icon {
+        @apply relative flex h-7 w-7 items-center justify-center rounded-md border border-accent bg-transparent bg-white text-sm text-primary transition-all duration-300 ease-in-out hover:bg-accent hover:text-white md:h-9 md:w-9 md:text-base;
+    }
+
+    .social-icon {
+        @apply relative flex h-7 w-7 items-center justify-center rounded-md border border-accent bg-accent bg-transparent text-sm text-white transition-all duration-300 ease-in-out hover:bg-accent2 hover:text-white md:h-9 md:w-9 md:text-base;
+    }
+
+    .book-card {
+        @apply relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl border border-light p-2.5 md:gap-4 md:p-3 lg:gap-5 lg:p-4;
+    }
+    .card-cont {
+        @apply w-full space-y-2 lg:space-y-3;
+    }
+
+    .author-card {
+        @apply block overflow-hidden rounded-xl border border-light text-primary transition-all duration-300 ease-in-out hover:text-accent;
+    }
+
+    .publication-card {
+        @apply relative flex flex-col items-center overflow-hidden rounded-xl border border-light p-4 text-primary transition-all duration-300 ease-in-out hover:text-accent md:p-5 lg:p-6;
+    }
+
+    .author-card img {
+        @apply h-24 w-full object-cover md:h-44;
+    }
+
+    .author-card .cont {
+        @apply px-3 py-4 text-center md:pb-5 md:pt-4;
+    }
+
+    .publication-card .cont {
+        @apply p-4 text-center;
+    }
+
+    .publication-card img {
+        @apply h-10 w-10 rounded-full object-cover md:h-32 md:w-32 lg:h-32 lg:w-32;
+    }
+
+    .input--field {
+        @apply w-full rounded-lg border border-gray-400 bg-transparent px-3 py-1.5 text-sm text-textColor focus:border-accent focus:outline-none md:py-2;
+    }
+
+    .checkbox-custom {
+        @apply h-5 w-5 rounded border border-light checked:bg-accent;
+    }
+}
