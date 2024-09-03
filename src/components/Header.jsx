@@ -1,10 +1,11 @@
 import { FaPhone, FaFacebookF, FaXTwitter, FaInstagram, FaYoutube, FaCartShopping, FaHeart, FaUser } from "react-icons/fa6";
 import { FaSearch } from "react-icons/fa";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProviders";
 
 const Header = () => {
-    const [menuBtn, setMenuBtn] = useState(false);
+    const { user } = useContext(AuthContext);
 
     const menuList = (
         <>
@@ -85,26 +86,38 @@ const Header = () => {
                                     <FaUser />
                                 </button>
                                 <ul tabIndex={0} className="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow">
-                                    <li>
-                                        <a href="" className="text-xs text-textColor hover:text-accent md:text-sm">
-                                            <i className="fa-solid fa-user" /> <span>My Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="" className="text-xs text-textColor hover:text-accent md:text-sm">
-                                            <i className="fa-solid fa-heart" /> <span>Wishlist</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="" className="text-xs text-textColor hover:text-accent md:text-sm">
-                                            <i className="fa-solid fa-shopping-cart" /> <span>Cart</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="" className="text-xs text-textColor hover:text-accent md:text-sm">
-                                            <i className="fa-solid fa-sign-out" /> <span>Logout</span>
-                                        </a>
-                                    </li>
+                                    {user ? (
+                                        <>
+                                            <li>
+                                                <a href="" className="text-xs text-textColor hover:text-accent md:text-sm">
+                                                    <i className="fa-solid fa-user" /> <span>My Profile</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="" className="text-xs text-textColor hover:text-accent md:text-sm">
+                                                    <i className="fa-solid fa-heart" /> <span>Wishlist</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="" className="text-xs text-textColor hover:text-accent md:text-sm">
+                                                    <i className="fa-solid fa-shopping-cart" /> <span>Cart</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="" className="text-xs text-textColor hover:text-accent md:text-sm">
+                                                    <i className="fa-solid fa-sign-out" /> <span>Logout</span>
+                                                </a>
+                                            </li>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <li>
+                                                <Link to="/signin" className="text-xs text-textColor hover:text-accent md:text-sm">
+                                                    Sign In
+                                                </Link>
+                                            </li>
+                                        </>
+                                    )}
                                 </ul>
                             </div>
                         </div>
@@ -137,9 +150,7 @@ const Header = () => {
                                     <i className="fa-solid fa-times" />
                                 </button>
                             </div>
-                            <ul className="navbar-menu flex w-full flex-col text-white lg:flex-row">
-                                {menuList}
-                            </ul>
+                            <ul className="navbar-menu flex w-full flex-col text-white lg:flex-row">{menuList}</ul>
                         </div>
                         <div className="flex items-center gap-3 lg:hidden">
                             <a href="wishlist.html" className="icon">
