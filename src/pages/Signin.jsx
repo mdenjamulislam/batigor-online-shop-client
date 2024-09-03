@@ -1,7 +1,26 @@
+import { useContext } from "react";
 import { FaUser, FaLock } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProviders";
 
 const Signin = () => {
+    const { signIn } = useContext(AuthContext);
+
+    const handleSignIn = (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signIn(email, password)
+            .then((user) => {
+                console.log(user);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
     return (
         <section className="sectionInner--padding">
             <div className="container xl:max-w-7xl">
@@ -26,7 +45,7 @@ const Signin = () => {
                         </div>
                         <div className="divider">or continue with password</div> {/* Divider */}
                         {/* Form */}
-                        <form action="" className="space-y-4">
+                        <form onSubmit={handleSignIn} className="space-y-4">
                             <div className="flex items-center gap-0">
                                 <label htmlFor="" className="rounded-l-lg border border-light bg-light px-3 py-2 text-xs md:py-3 md:text-lg">
                                     <FaUser />
