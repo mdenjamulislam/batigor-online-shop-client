@@ -116,6 +116,11 @@ const Header = () => {
                                                     Sign In
                                                 </Link>
                                             </li>
+                                            <li>
+                                                <Link to="/signup" className="text-xs text-textColor hover:text-accent md:text-sm">
+                                                    Sign Up
+                                                </Link>
+                                            </li>
                                         </>
                                     )}
                                 </ul>

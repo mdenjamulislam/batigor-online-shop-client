@@ -7,6 +7,7 @@ import Root from "./layout/Root.jsx";
 import Home from "./pages/Home.jsx";
 import Signin from "./pages/signin.jsx";
 import AuthProviders from "./providers/AuthProviders.jsx";
+import SignUp from "./pages/SignUp.jsx";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: "/signin",
                 element: <Signin/>,
+            },
+            {
+                path: "/signup",
+                element: <SignUp/>,
             }
         ],
     },

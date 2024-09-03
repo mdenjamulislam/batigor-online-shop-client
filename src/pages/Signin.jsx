@@ -1,4 +1,5 @@
 import { FaUser, FaLock } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Signin = () => {
     return (
@@ -45,9 +46,9 @@ const Signin = () => {
                         {/* End of the form */}
                         <p>
                             Don't have an account?{" "}
-                            <a href="signup.html" className="text-accent">
+                            <Link to='/signup' className="text-accent">
                                 Register
-                            </a>
+                            </Link>
                         </p>
                     </div>
                 </div>
